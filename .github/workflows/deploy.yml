@@ -31,7 +31,7 @@ jobs:
     - name: Create SSH Key File
       run: |
         echo "${{ secrets.EC2_KEY }}" > Arunachalam_Key_Value_Pair.pem
-        chmod 600 Arunachalam_Key_Value_Pair.pem  # Secure the key file
+        chmod 600 Arunachalam_Key_Value_Pair.pem  # Secure the key file "echo 'SSH connection successful'"
         
     # Step 3: Transfer code to EC2 instance
     - name: Transfer Code to EC2
