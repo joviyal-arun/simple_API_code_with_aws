@@ -31,12 +31,12 @@ jobs:
     - name: Create SSH Key File
       run: |
         echo "${{ secrets.EC2_KEY }}" > Arunachalam_Key_Value_Pair.pem
-        chmod 600 Arunachalam_Key_Value_Pair.pem  # Secure the key file "echo 'SSH connection successful'"
+        chmod 600 Arunachalam_Key_Value_Pair.pem  # Secure the key file
         
     # Step 3: Transfer code to EC2 instance
     - name: Transfer Code to EC2
       run: |
-        scp -o StrictHostKeyChecking=no -i ${{ secrets.EC2_KEY }} -r * ec2-user@${{ secrets.EC2_PUBLIC_IP }}:/home/ec2-user/flask-app
+        ssh -o StrictHostKeyChecking=no -i Arunachalam_Key_Value_Pair.pem -p 1613 $EC2_USER@$EC2_HOST "echo 'SSH connection successful'"
 
     # Step 4: Connect to EC2 and set up Flask app
     - name: Set Up Flask App on EC2
