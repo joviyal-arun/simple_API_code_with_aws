@@ -37,7 +37,7 @@ jobs:
     - name: Transfer Code to EC2
       run: |
         echo "${{ secrets.EC2_KEY }}" > Arunachalam_Key_Value_Pair.pem  # Save the secret to a file
-        chmod 600 key.pem  # Restrict permissions for the key
+        chmod 600 Arunachalam_Key_Value_Pair.pem  # Restrict permissions for the key
         scp -o StrictHostKeyChecking=no -i ${{ secrets.EC2_KEY }} -r * ec2-user@${{ secrets.EC2_PUBLIC_IP }}:/home/ec2-user/flask-app
 
     # Step 4: Connect to EC2 and set up Flask app
