@@ -10,7 +10,7 @@ def home():
 # Route to handle button click
 @app.route("/button-click")
 def button_click():
-    return "<h1>Button clicked! Here is your static content.</h1>"
+    return "<h1>Button clicked! Hi Here is your static content.</h1>"
 
 if __name__ == "__main__":
     app.run(debug=True)
