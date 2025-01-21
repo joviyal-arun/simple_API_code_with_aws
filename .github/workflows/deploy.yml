@@ -36,7 +36,7 @@ jobs:
     # Step 3: Transfer code to EC2 instance in AWS
     - name: Transfer Code to EC2
       run: |
-        scp -o StrictHostKeyChecking=no -i Arunachalam_Key_Value_Pair.pem -r * ec2-user@${{ secrets.EC2_PUBLIC_IP }}:/home/ec2-user/flask-app
+        scp -o StrictHostKeyChecking=no -i Arunachalam_Key_Value_Pair.pem -r * ubuntu@${{ secrets.EC2_PUBLIC_IP }}:/home/ubuntu/flask-app
 
     # Step 4: Connect to EC2 and set up Flask app 
     - name: Set Up Flask App on EC2
