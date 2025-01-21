@@ -42,7 +42,7 @@ jobs:
     - name: Set Up Flask App on EC2
       run: |
         echo "Connecting to EC2 instance"
-        ssh -o StrictHostKeyChecking=no -i ${{ secrets.EC2_KEY }} ubuntu@${{ secrets.EC2_PUBLIC_IP }} << 'EOF'
+        ssh -o StrictHostKeyChecking=no -i Arunachalam_Key_Value_Pair.pem ubuntu@${{ secrets.EC2_PUBLIC_IP }} << 'EOF'
         cd /home/ec2-user/flask-app
         python3 -m venv venv
         source venv/bin/activate
