@@ -13,15 +13,14 @@ jobs:
     # Step 1: Checkout the code
     - name: Checkout Code
       uses: actions/checkout@v3
-      echo "Step 1: Checking out code..."
+      run: |
+        echo "Step 1: Checking out code..."
 
 
     - name: set up python
       uses: actions/setup-python@v4
       with:
         python-version: '3.x'
-      echo "Step 1: Python installation..."
-
 
     # Step 2: Set up AWS CLI
     - name: Configure AWS
